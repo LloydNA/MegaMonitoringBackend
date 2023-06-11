@@ -28,4 +28,15 @@ router.post('/users/toribio/humidity/:val', (req, res) => {
   }
 })
 
+router.post('/users/toribio/location/:latitude/:longitude', (req, res) => {
+  try {
+    devicesServices.getUser().houses[0].devices[0].location.latitude = parseFloat(req.params.latitude)
+    devicesServices.getUser().houses[0].devices[0].location.longitude = parseFloat(req.params.longitude)
+
+    res.send('Location set')
+  } catch (e: any) {
+    res.status(404).send(e)
+  }
+})
+
 export default router
