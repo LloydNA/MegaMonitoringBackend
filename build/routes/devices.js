@@ -32,4 +32,23 @@ const router = express_1.default.Router();
 router.get('/users/toribio', (_req, res) => {
     res.send(devicesServices.getUser());
 });
+router.get('/users/toribio/temperature/:val', (req, res) => {
+    try {
+        devicesServices.getUser().houses[0].devices[0].temperatureC = parseInt(req.params.val);
+        devicesServices.getUser().houses[0].devices[0].temperatureF = (parseInt(req.params.val) * (9 / 5)) + 32.0;
+        res.send(parseInt(req.params.val) + ' °C');
+    }
+    catch (e) {
+        res.status(404).send(e);
+    }
+});
+router.get('/users/toribio/humidity/:val', (req, res) => {
+    try {
+        devicesServices.getUser().houses[0].devices[0].humidity = parseFloat(req.params.val);
+        res.send(parseInt(req.params.val) + ' °C');
+    }
+    catch (e) {
+        res.status(404).send(e);
+    }
+});
 exports.default = router;
