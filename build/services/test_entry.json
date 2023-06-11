@@ -3,16 +3,16 @@
     "houses": [
         {
             "name": "WWDC House",
-            "location": {
-                "latitude": 25.4404465,
-                "longitude": -100.9397448
-            },
             "devices": [
                 {
                     "name": "Garden",
                     "temperatureC": 22,
                     "temperatureF": 71.6,
                     "humidity": 0.42,
+                    "location": {
+                        "latitude": 25.4404465,
+                        "longitude": -100.9397448
+                    },
                     "plants": [
                         {
                             "name": "Tomato :3",
@@ -29,6 +29,10 @@
                     "temperatureC": 19,
                     "temperatureF": 66.2,
                     "humidity": 0.25,
+                    "location": {
+                        "latitude": 25.4404977,
+                        "longitude": -100.9409539
+                    },
                     "plants": [
                         {
                             "name": "Mint",

@@ -10,10 +10,6 @@ export interface User {
 
 export interface House {
   name: string
-  location: {
-    latitude: number
-    longitude: number
-  }
   devices: Device[]
 }
 
@@ -22,5 +18,9 @@ export interface Device {
   temperatureC: number
   temperatureF: number
   humidity: number
+  location: {
+    latitude: number
+    longitude: number
+  }
   plants: Plant[]
 }
